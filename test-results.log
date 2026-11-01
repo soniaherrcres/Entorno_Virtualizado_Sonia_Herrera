@@ -1,0 +1,23 @@
+======================================================================
+  INFORME DE PRUEBAS DE CONECTIVIDAD Y DIAGNÓSTICO - HOME LAB
+  Autora: Sonia Herrera Crespo
+  Entorno: VirtualBox (Redes Híbridas / VLAN 10 - 192.168.1.0/24)
+======================================================================
+
+[1] TOPOLOGÍA E INTERFACES DE RED
+ - PC Host (Windows 11 - Hipervisor VirtualBox)
+ - VM 1: Ubuntu Server 24.04 LTS -> IP: 192.168.1.10 (Adaptador Solo-Anfitrión)
+ - VM 2: Windows Server 2022   -> IP: 192.168.1.20 (Adaptador Solo-Anfitrión + NAT)
+
+[2] PRUEBAS DE CONECTIVIDAD INTERNA (TRÁFICO DE RED INTERNO)
+ -> Ping desde VM 1 (Ubuntu) a VM 2 (Windows Server - 192.168.1.20):
+    [OK] 4 paquetes transmitidos, 0% perdidos, RTT medio < 1ms.
+
+[3] VERIFICACIÓN DE SERVICIOS Y ACCESO A INTERNET
+ -> Servidor Web & SSH (Ubuntu Server): Puertos activos y accesibles localmente.
+ -> Controlador de Dominio y DNS (Windows Server): Resolución de nombres operativa.
+ -> Acceso a Internet (NAT): Descarga de paquetes y actualizaciones validada.
+
+----------------------------------------------------------------------
+Estado final del laboratorio: PRUEBAS SUPERADAS CON ÉXITO [PASS]
+----------------------------------------------------------------------
